@@ -19,6 +19,10 @@ async function mergePDFs() {
 
   const mergedPdfBytes = await mergedPdf.save();
 
+  console.log('Pages in sample1.pdf:', pdfA.getPageCount());
+  console.log('Pages in sample2.pdf:', pdfB.getPageCount());
+  console.log('Total pages in Merged.pdf', mergedPdf.getPageCount());
+  
   fs.writeFileSync('Merged.pdf', mergedPdfBytes);
   console.log('PDFs merged successfully into Merged.pdf!');
 }
